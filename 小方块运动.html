@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="500" style="border:1px solid #000">
+    您的浏览器不支持canvas!
+</canvas>
+</body>
+</html>
+<script>
+    var drawing=document.getElementById('myCanvas');
+    var context=drawing.getContext('2d');
+
+    var x=80,y=80,mx=0,my=0,ml=1,w=40,h=40,cw=500,ch=400;
+
+    setInterval(function(){
+        move(context)
+    },6);
+    function move(context){
+        context.fillStyle="#ccc";
+        context.fillRect(50,50,500,400);
+
+
+        context.fillStyle="red";
+        context.fillRect(x,y,w,h);
+
+        context.fillStyle="blue";
+        context.fillRect(x+10,y+10,20,20);
+//        context.clearRect(x+10,y+10,20,20);
+        if(mx==0){
+            x=x+ml;
+            if(x>=cw-w+50){
+                mx=1;
+            }
+        } else{
+            x=x-ml;
+            if(x<=50){
+                mx=0;
+            }
+        }
+
+        if(my==0){
+            y=y+ml;
+            if(y>=ch-h+50){
+                my=1;
+            }
+        } else{
+            y=y-ml;
+            if(y<=50){
+                my=0;
+            }
+        }
+    }
+
+
+
+</script>

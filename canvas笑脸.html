@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    div{width:500px;margin:0 auto;border:1px solid #ccc;}
+</style>
+<body>
+<div>
+    <canvas id="myCanvas" width="500" height="500">
+        您的浏览器不支持canvas!
+    </canvas>
+</div>
+
+</body>
+</html>
+<script>
+    var drawing = document.getElementById("myCanvas");
+
+    if (drawing.getContext){
+        var context = drawing.getContext("2d");
+        //外圆
+        context.lineWidth=5;
+        context.beginPath();
+        context.strokeStyle="#d7d600";
+        context.arc(250, 250, 150, 0, 2 * Math.PI, false);
+        context.closePath();
+        context.stroke();
+
+
+        //左边眉毛
+        context.lineWidth=6;
+        context.beginPath();
+        context.strokeStyle="#f90000";
+        context.moveTo(160,180);
+        context.bezierCurveTo(160,160,220,160,220,180);
+        context.closePath();
+        context.stroke();
+
+
+        //右边眉毛
+        context.beginPath();
+        context.strokeStyle="#f90000";
+        context.moveTo(280,180);
+        context.bezierCurveTo(280,160,340,160,340,180);
+        context.closePath();
+        context.stroke();
+
+
+
+        //左睛
+        var con = drawing.getContext("2d");
+        var gradient = con.createLinearGradient(190, 250, 190, 200);
+        con.beginPath();
+        gradient.addColorStop(0, "#cacaca");
+        gradient.addColorStop(0.5, "#828282");
+        gradient.addColorStop(1, "#000");
+        con.fillStyle=gradient;
+        con.strokeStyle=gradient;
+        con.arc(190,220,30,0,Math.PI*2);
+        con.closePath();
+        con.fill();
+
+
+        //右眼
+        var gradient = con.createLinearGradient(310, 250, 310, 200);
+        con.beginPath();
+        gradient.addColorStop(0, "#cacaca");
+        gradient.addColorStop(0.5, "#828282");
+        gradient.addColorStop(1, "#000");
+        con.fillStyle=gradient;
+        con.strokeStyle=gradient;
+        con.arc(310,220,30,0,Math.PI*2);
+        con.closePath();
+        con.fill();
+
+        //嘴巴
+        context.lineWidth=3;
+        context.beginPath();
+        context.moveTo(160,350);
+        context.lineTo(250,370);
+        context.lineTo(340,350);
+        context.lineTo(250,330);
+        context.lineTo(160,350);
+        context.fillStyle="#64668c";
+        context.closePath();
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(180,346);
+        context.lineTo(180,354);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(196,342);
+        context.lineTo(196,358);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(216,337);
+        context.lineTo(216,363);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(233,334);
+        context.lineTo(233,365);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+
+        context.beginPath();
+        context.moveTo(249,331);
+        context.lineTo(249,369);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+
+        context.beginPath();
+        context.moveTo(265,334);
+        context.lineTo(265,365);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+
+        context.beginPath();
+        context.moveTo(282,337);
+        context.lineTo(282,363);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+
+        context.beginPath();
+        context.moveTo(302,342);
+        context.lineTo(302,358);
+        context.width=2;
+        context.strokeStyle="#000000";
+        context.closePath();
+        context.stroke();
+
+
+
+
+    }
+
+</script>

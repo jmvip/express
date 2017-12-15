@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    str="afsfffffddssafiu";
+    var newarr=str.split("");
+    var max=0;
+    val="";
+    function fun(arr,a){
+        var count=0;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==a){
+                count++;
+            }
+        }
+        return count;
+    }
+    for(var i=0;i<newarr.length;i++){
+        var ind=fun(newarr,newarr[i]);
+        if(ind>max){
+            max=ind;
+            val=newarr[i];
+        }
+    }
+</script>
+</body>
+</html>
